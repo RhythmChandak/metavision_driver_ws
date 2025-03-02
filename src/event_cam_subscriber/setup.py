@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'event_cam_subscriber = event_cam_subscriber.subscriber_node:main',
+            'evfly_interface = event_cam_subscriber.evfly_interface:main',
         ],
     },
 )
