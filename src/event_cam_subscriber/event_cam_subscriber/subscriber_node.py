@@ -24,7 +24,13 @@ class EventCamCustomSubscriber(Node):
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
-        self.get_logger().info('I heard: "%s"' % msg)
+        height = msg.height
+        width = msg.width
+        seq = msg.seq
+        is_bigendian = msg.is_bigendian
+        events = msg.events
+
+        self.get_logger().info('Number of events: "%d"' % len(events), throttle_duration_sec=1.0)
 
 
 def main(args=None):
